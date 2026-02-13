@@ -1,0 +1,269 @@
+/* Stringlet site — matches the Flutter app theme */
+
+:root {
+  --bg-start: #FFF8E7;
+  --bg-end: #E8E4C9;
+  --surface: #FFF8E7;
+  --card: #F5F0DC;
+  --primary: #6B7B3C;
+  --secondary: #8B9A5B;
+  --on-surface: #3D3D3D;
+  --on-surface-muted: rgba(61, 61, 61, 0.5);
+  --on-primary: #fff;
+  --card-border: rgba(107, 123, 60, 0.15);
+  --input-bg: #fff;
+  --tile-bg: #E8E8E8;
+  --tile-border: #D0D0D0;
+  --tile-hl-bg: var(--primary);
+  --tile-hl-text: #fff;
+  --wildcard: #2196F3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-start: #1A1A2E;
+    --bg-end: #2D1B4E;
+    --surface: #1A1A2E;
+    --card: #252545;
+    --primary: #6B5B95;
+    --secondary: #4A4E69;
+    --on-surface: #E0E0E0;
+    --on-surface-muted: rgba(224, 224, 224, 0.5);
+    --on-primary: #fff;
+    --card-border: rgba(107, 91, 149, 0.25);
+    --input-bg: #2D2D4A;
+    --tile-bg: #4A4A4A;
+    --tile-border: #5A5A5A;
+    --tile-hl-bg: var(--primary);
+    --tile-hl-text: #fff;
+    --wildcard: #64B5F6;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  background-color: var(--bg-end);
+}
+
+body {
+  font-family: 'Source Code Pro', monospace;
+  background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+  color: var(--on-surface);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.6;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  font-family: 'Bree Serif', serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin: 1.5em 0 0.5em;
+}
+
+h3 {
+  font-size: 1.05rem;
+  color: var(--on-surface);
+  margin: 1.25em 0 0.25em;
+}
+
+p { margin: 0.5em 0; }
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+ul { padding-left: 1.4em; margin: 0.5em 0; }
+li { margin: 0.25em 0; }
+
+/* iPhone frame — 19.6:9 aspect ratio */
+.phone-frame {
+  --phone-width: 280px;
+  --screen-width: calc(var(--phone-width) - 24px);
+  --screen-height: calc(var(--screen-width) * 19.6 / 9);
+  width: var(--phone-width);
+  margin: 0 auto;
+  background: #111;
+  border-radius: 40px;
+  padding: 12px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.phone-notch {
+  width: 90px;
+  height: 24px;
+  background: #111;
+  border-radius: 0 0 16px 16px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  top: -1px;
+}
+
+.phone-screen {
+  background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+  border-radius: 28px;
+  padding: 10px 16px 20px;
+  margin-top: -14px;
+  height: var(--screen-height);
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-header {
+  font-family: 'Bree Serif', serif;
+  color: var(--primary);
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 16px 0 10px;
+}
+
+.phone-card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+}
+
+.phone-input {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.9rem;
+  color: var(--on-surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--on-surface-muted);
+  flex-shrink: 0;
+}
+
+.phone-tiles {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--card);
+  border: 1.5px solid var(--card-border);
+  color: var(--on-surface);
+}
+
+.tile.highlighted {
+  background: var(--tile-hl-bg);
+  border-color: var(--tile-hl-bg);
+  color: var(--tile-hl-text);
+}
+
+.tile.wildcard {
+  color: var(--wildcard);
+}
+
+.phone-results {
+  flex: 1;
+  margin-top: 6px;
+}
+
+.phone-result-header {
+  font-family: 'Bree Serif', serif;
+  font-size: 0.7rem;
+  color: var(--primary);
+  padding: 6px 0 3px;
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 6px;
+}
+
+.phone-result-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+a.word {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.65rem;
+  color: var(--on-surface);
+  background: var(--card);
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+a.word:hover {
+  background: var(--primary);
+  color: var(--on-primary);
+  text-decoration: none;
+}
+
+.phone-bar {
+  width: 100px;
+  height: 4px;
+  background: #555;
+  border-radius: 2px;
+  margin: 10px auto 2px;
+}
+
+/* Subpage layout */
+.subpage {
+  display: block;
+}
+
+.subpage .container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+.content-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  margin-top: 1.5em;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1.5em;
+  font-size: 0.85rem;
+  color: var(--primary);
+}
+
+.updated {
+  font-size: 0.8rem;
+  color: var(--on-surface-muted);
+  margin-bottom: 1em;
+}
