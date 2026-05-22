@@ -1,17 +1,18 @@
 /* Stringlet site — matches the Flutter app theme */
 
 :root {
-  --bg-start: #FFF8E7;
-  --bg-end: #E8E4C9;
-  --surface: #FFF8E7;
-  --card: #F5F0DC;
-  --primary: #6B7B3C;
-  --secondary: #8B9A5B;
-  --on-surface: #3D3D3D;
-  --on-surface-muted: rgba(61, 61, 61, 0.5);
+  --bg-start: #EFF6FF;
+  --bg-end: #DBEAFE;
+  --surface: #EFF6FF;
+  --card: #DDEBFF;
+  --primary: #1E3A8A;
+  --accent: #1E3A8A;
+  --secondary: #3B82F6;
+  --on-surface: #1E293B;
+  --on-surface-muted: rgba(30, 41, 59, 0.5);
   --on-primary: #fff;
-  --card-border: rgba(107, 123, 60, 0.15);
-  --input-bg: #fff;
+  --card-border: rgba(30, 58, 138, 0.15);
+  --input-bg: #BFDBFE;
   --tile-bg: #E8E8E8;
   --tile-border: #D0D0D0;
   --tile-hl-bg: var(--primary);
@@ -21,17 +22,18 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-start: #1A1A2E;
-    --bg-end: #2D1B4E;
-    --surface: #1A1A2E;
-    --card: #252545;
-    --primary: #6B5B95;
-    --secondary: #4A4E69;
+    --bg-start: #1A1F2E;
+    --bg-end: #1B284E;
+    --surface: #1A1F2E;
+    --card: #1F2D54;
+    --primary: #1E3A8A;
+    --accent: #AEC4FF;
+    --secondary: #4A5269;
     --on-surface: #E0E0E0;
     --on-surface-muted: rgba(224, 224, 224, 0.5);
     --on-primary: #fff;
-    --card-border: rgba(107, 91, 149, 0.25);
-    --input-bg: #2D2D4A;
+    --card-border: rgba(174, 196, 255, 0.2);
+    --input-bg: #22315C;
     --tile-bg: #4A4A4A;
     --tile-border: #5A5A5A;
     --tile-hl-bg: var(--primary);
@@ -68,13 +70,13 @@ h1, h2, h3 {
 
 h1 {
   font-size: 2rem;
-  color: var(--primary);
+  color: var(--accent);
   text-align: center;
 }
 
 h2 {
   font-size: 1.25rem;
-  color: var(--primary);
+  color: var(--accent);
   margin: 1.5em 0 0.5em;
 }
 
@@ -86,7 +88,7 @@ h3 {
 
 p { margin: 0.5em 0; }
 
-a { color: var(--primary); text-decoration: none; }
+a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 ul { padding-left: 1.4em; margin: 0.5em 0; }
@@ -129,7 +131,7 @@ li { margin: 0.25em 0; }
 
 .phone-header {
   font-family: 'Bree Serif', serif;
-  color: var(--primary);
+  color: var(--accent);
   font-size: 1.1rem;
   text-align: center;
   padding: 16px 0 10px;
@@ -198,7 +200,7 @@ li { margin: 0.25em 0; }
 .phone-result-header {
   font-family: 'Bree Serif', serif;
   font-size: 0.7rem;
-  color: var(--primary);
+  color: var(--accent);
   padding: 6px 0 3px;
   border-bottom: 1px solid var(--card-border);
   margin-bottom: 6px;
@@ -259,7 +261,7 @@ a.word:hover {
   display: inline-block;
   margin-top: 1.5em;
   font-size: 0.85rem;
-  color: var(--primary);
+  color: var(--accent);
 }
 
 .updated {
